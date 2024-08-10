@@ -4,9 +4,11 @@ import {
   View,
   FlatList,
   StyleSheet,
+  Image,
   Text,
   StatusBar,
 } from 'react-native';
+
 
 import {List} from 'react-native-paper'
 
@@ -33,13 +35,14 @@ const DATA = [
   },
 ];
 
-const Item = ({item}) => {
-  console.warn(item)
+// Leitura do title
+const Item = ({elemento: item}) => {
   return(
   <List.Item
-    title="Título qualquer"
-    description="Item description"
-    left={props => <List.Icon {...props} icon="folder" />}
+    title= {item.title}
+    description= {item.description}
+    // left={props => <List.Icon {...props} icon="folder" />}
+    left={props => <Image {...props} style={styles.tinyLogo} source={{uri: 'https://i.pinimg.com/originals/f1/f4/ea/f1f4eabb2e148d9f38bf23c93b84ca4f.jpg'}}/>}
   />
 )};
 
@@ -48,7 +51,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <FlatList
         data={DATA}
-        renderItem={({item}) => <Item title={item} />} // Renderiza dados
+        renderItem={({item}) => <Item elemento={item} />} // Renderiza o componente
         keyExtractor={item => item.id}
       />
     </SafeAreaView>
@@ -68,6 +71,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
 });
 
