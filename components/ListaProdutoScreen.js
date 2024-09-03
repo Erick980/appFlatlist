@@ -17,9 +17,10 @@ export default props => {
         // left={props => <List.Icon {...props} icon="folder" />}
 
         left={props => <Image {...props} style={styles.tinyLogo} source={{ uri: item.urlImagem }} />}
+        onPress={() => props.navigation.navigate("DetalheProduto", {id: item.id})}
+      
       />
-    )
-  };
+    )};
 
 
   return (
