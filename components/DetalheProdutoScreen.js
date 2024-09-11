@@ -8,9 +8,6 @@ const getProdutoPorId = (id) => {
 }
 
 export default ({route, navigation}) => {
-
-    console.warn(route)
-
     const [produto, setProduto] = useState(getProdutoPorId(route.params.id))
 
     return (

@@ -12,9 +12,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='ListaProduto'>
         <Stack.Screen name="ListaProduto" component={ListaProdutoScreen} />
-      </Stack.Navigator>
-      <Stack.Navigator initialRouteName='DetalheProduto'>
-      <Stack.Screen name="DetalheProdutoScreen" component={DetalheProdutoScreen} />
+        <Stack.Screen name='DetalheProduto' component={DetalheProdutoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
